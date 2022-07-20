@@ -13,12 +13,10 @@ const assignment = {};
  * @param {Array} arrayOfNumbers the array of numbers to sum
  * @returns number the sum of the numbers
  */
-// const number = [2, 4, 9, 5, 6, 7, 8]
-
-const sum = number.reduce(function(a,b){
-    return a+b
-})
-assignment.sumOfNumbers = sumOfNumbers;
+function sumOfNumbers(arrayOfNumbers) {
+   
+}
+// assignment.sumOfNumbers = sumOfNumbers;
 
 /**
  * Challenge - 2
@@ -29,33 +27,49 @@ assignment.sumOfNumbers = sumOfNumbers;
  * @param {Array} arrayOfNumbers the array containing even or non-even numbers
  * @returns number the count of even numbers
  */
-const even = number.filter(function(num){
-    return num%2==0
-})
-  assignment.countEvenNumbers = countEvenNumbers;
+function countEvenNumbers(arrayOfNumbers) {
+ let countOfEvenNumbers=0;
+  for(let i=0; i<arrayOfNumbers.length; i++){
+    if(arrayOfNumbers[i]% 2==0){
+      countOfEvenNumbers+=1;
+    }
+    else{
+      countOfEvenNumbers+=0;
+    }
+  }
+  
+ 
+  return countOfEvenNumbers;
+}
 
-  /**
-   * Challenge - 3
-   * 
-   * Given an array of numbers representing temperatures in Celsius,
-   * convert each number to Fahrenheit and return a new array containing the converted
-   * temperatures in Fahrenheit. Decimal figures in the converted values in Fahrenheit should be removed.
-   * E.g 51.21 should just be 51 (hint: Math.trunc(...) function)
-   * If you did Challenge - 3, remove the comment in the line just after this function
-   * 
-   * See https://www.thoughtco.com/celcius-to-farenheit-formula-609227 for the conversion formula
-   * 
-   * @param {Array} arrayOfNumbers the array containing temperatures in Celsius to be converted
-   * @returns Array the converted temperatures in Fahrenheit
-   */
-  const convert = number.map(function(num){
-    return Math.round((num*(9/5))+32)
-})
-    assignment.celsiusToFahrenheit = celsiusToFahrenheit;
+ assignment.countEvenNumbers = countEvenNumbers;
+
+/**
+ * Challenge - 3
+ * 
+ * Given an array of numbers representing temperatures in Celsius,
+ * convert each number to Fahrenheit and return a new array containing the converted
+ * temperatures in Fahrenheit. Decimal figures in the converted values in Fahrenheit should be removed.
+ * E.g 51.21 should just be 51 (hint: Math.trunc(...) function)
+ * If you did Challenge - 3, remove the comment in the line just after this function
+ * 
+ * See https://www.thoughtco.com/celcius-to-farenheit-formula-609227 for the conversion formula
+ * 
+ * @param {Array} arrayOfNumbers the array containing temperatures in Celsius to be converted
+ * @returns Array the converted temperatures in Fahrenheit
+ */
+function celsiusToFahrenheit(arrayOfNumbers) {
+celsiusToFahrenheit=[];
+  for(x of arrayOfNumbers){
+    celsiusToFahrenheit.push(Math.trunc(x*9/5+32));
+  }
+  return celsiusToFahrenheit;
+}
+   assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
 
-    // ========================
-    // DO NOT EDIT THIS BLOCK
-    module.exports = assignment;
+// ========================
+// DO NOT EDIT THIS BLOCK
+module.exports = assignment;
 // ========================
 
